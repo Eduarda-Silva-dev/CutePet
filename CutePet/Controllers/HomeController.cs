@@ -2,7 +2,7 @@ using CutePet.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace CutePet.Controllers
+namespace LojaPet.Controllers
 {
     public class HomeController : Controller
     {
@@ -10,10 +10,10 @@ namespace CutePet.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
+        public IActionResult Clientes()
         {
-            return View();
+            var clientes = Simulacao.ClientesList;
+            return View(clientes);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

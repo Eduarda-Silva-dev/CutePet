@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Orçamento e Cadastro";
+}
+
+<div class="container mt-4">
+    <h2>Orçamento e Agendamento de Serviço</h2>
+    <form asp-action="Calcular" method="post" class="mt-3">
+
+        <h મદ class="text-primary">1. Dados do Cliente</h>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label text="Nome do Cliente" class="form-label">Nome do Cliente:</label>
+                <input type="text" name="NomeCliente" class="form-control" required placeholder="Ex: Maria Silva" />
+            </div>
+            <div class="col-md-6">
+                <label text="Telefone de Contato" class="form-label">Telefone:</label>
+                <input type="text" name="Telefone" class="form-control" required placeholder="(00) 00000-0000" />
+            </div>
+        </div>
+
+        <h class="text-primary">2. Dados do Pet</h>
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label text="Nome do Pet" class="form-label">Nome do Pet:</label>
+                <input type="text" name="NomePet" class="form-control" required placeholder="Ex: Mel" />
+            </div>
+            <div class="col-md-4">
+                <label text="Raça do Animal" class="form-label">Raça:</label>
+                <input type="text" name="Raca" class="form-control" placeholder="Ex: Poodle" />
+            </div>
+            <div class="col-md-4">
+                <label text="Porte do Pet" class="form-label">Porte:</label>
+                <select name="Porte" class="form-control">
+                    <option value="Pequeno" text="Porte Pequeno">Pequeno</option>
+                    <option value="Medio" text="Porte Médio">Médio</option>
+                    <option value="Grande" text="Porte Grande">Grande</option>
+                </select>
+            </div>
+        </div>
+
+        <h class="text-primary">3. Serviços e Horário</h>
+        <div class="mb-3">
+            <div class="form-check">
+                <input type="checkbox" name="IncluiBanho" value="true" class="form-check-input" id="banho" />
+                <label text="Serviço de Banho" class="form-check-label" for="banho">Banho</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="IncluiTosa" value="true" class="form-check-input" id="tosa" />
+                <label text="Serviço de Tosa" class="form-check-label" for="tosa">Tosa</label>
+            </div>
+            <div class="form-check mb-3">
+                <input type="checkbox" name="IncluiHidratacao" value="true" class="form-check-input" id="hidratacao" />
+                <label text="Serviço de Hidratação" class="form-check-label" for="hidratacao">Hidratação</label>
+            </div>
+        </div>
+
+        <div class="mb-3 col-md-4">
+            <label text="Horário do Atendimento" class="form-label">Horário Desejado:</label>
+            <input type="text" name="Horario" class="form-control" placeholder="Ex: 14:30" required />
+        </div>
+
+        <button type="submit" name="btnCalcular" text="Calcular e Cadastrar" class="btn btn-success">Gerar Orçamento e Agendar</button>
+        <a href="/Home/Index" name="linkVoltar" text="Voltar ao Menu" class="btn btn-secondary">Menu Principal</a>
+    </form>
+</div>
